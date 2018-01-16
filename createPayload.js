@@ -1,9 +1,8 @@
-
-
-
-module.exports = function(siteName, siteUrl, elem){
-  let obj = {};
-  const info = {link: siteUrl + elem.attr('href'), title: elem.text() }
-  obj[siteName] = info;
-  return obj;
-}
+module.exports = function(name, url, element) {
+	return {
+		articleLink: url + element.attr('href'),
+		articleTitle: element.text(),
+		siteName: name,
+		siteUrl: url
+	};
+};

@@ -1,12 +1,10 @@
-
 var cheerioFetch = require('fetch-cheerio-object');
-var createPayload = require('../createPayload')
+var createPayload = require('../createPayload');
+var siteInfo = require('../Config/siteInfo');
 
-const url = 'http://www.breitbart.com' ;
-
-module.exports = cheerioFetch(url).then(
-    $ =>{
-      const node = $('.title', '.top-article').find('a');
-      return createPayload('Breitbart',url, node);
-    }
-  );
+module.exports = cheerioFetch(siteInfo.breitbart.url).then(
+	$ => {
+		const node = $('.title', '.top-article').find('a');
+		return createPayload(siteInfo.breitbart.name, siteInfo.breitbart.url, node);
+	}
+);
