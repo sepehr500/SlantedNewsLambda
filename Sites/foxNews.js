@@ -5,6 +5,6 @@ var siteInfo = require('../Config/siteInfo');
 module.exports = cheerioFetch(siteInfo.FoxNews.url).then(
 	$ => {
 		const node = $('.has-hero').find('.info-header').find('a');
-		return createPayload(siteInfo.FoxNews.name, '', node);
+		return createPayload(siteInfo.FoxNews.name, siteInfo.FoxNews.url, node);
 	}
 );
