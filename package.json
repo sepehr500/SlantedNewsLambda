@@ -24,6 +24,7 @@
     "node-lambda": "^0.9.0"
   },
   "dependencies": {
+    "@aws/dynamodb-data-mapper": "^0.4.0",
     "aws-sdk": "^2.182.0",
     "cheerio": "^1.0.0-rc.2",
     "fetch-cheerio-object": "^1.2.0"

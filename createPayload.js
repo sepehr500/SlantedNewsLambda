@@ -1,8 +1,9 @@
 module.exports = function(name, url, element) {
-	return {
+	let returnObj = {};
+	returnObj[name] = {
 		articleLink: url + element.attr('href'),
 		articleTitle: element.text(),
-		siteName: name,
 		siteUrl: url
 	};
+	return returnObj;
 };
