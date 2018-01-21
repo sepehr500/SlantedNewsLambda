@@ -1,7 +1,11 @@
 // For development/testing purposes
-var brietbart = require('./Sites/breitbart');
+var brietbart = require('./Sites/breitbart'),
+	npr = require('./Sites/npr');
 
-var promises = [brietbart];
+var promises = [
+	brietbart,
+	npr
+];
 
 exports.handler = function(event, context, callback) {
 	Promise.all(promises).then(result => {
