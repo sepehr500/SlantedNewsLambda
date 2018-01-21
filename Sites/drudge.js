@@ -4,7 +4,7 @@ var siteInfo = require('../Config/siteInfo');
 
 module.exports = cheerioFetch(siteInfo.Drudge.url).then(
 	$ => {
-		const node = $('.has-hero').find('.info-header').find('a');
-		return createPayload(siteInfo.Drudge.name, '', node);
+		const node = $('#app_mainheadline').find('a');
+		return createPayload(siteInfo.Drudge.name, siteInfo.Drudge.url, node , false);
 	}
 );

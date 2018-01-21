@@ -23,8 +23,8 @@ module.exports = {
 		name: 'The Daily Caller',
 		url: 'http://www.dailycaller.com'
 	},
-	nationalReview: {
-		name: 'National Review',
-		url: 'http://www.nationalreview.com'
+	TheBlaze: {
+		name: 'The Blaze',
+		url: 'http://www.theblaze.com'
 	}
 };
