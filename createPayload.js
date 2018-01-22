@@ -1,35 +1,18 @@
-var configureUrl = function(link, siteUrl) {
-	return link.includes(siteUrl) ? link : `${siteUrl}${link}`;
+var R = require('ramda');
+
+var configureUrl = R.curry((siteUrl, hasLink, link) => { return link.includes(siteUrl) || hasLink ? link : siteUrl + link;});
+
+module.exports = (obj) => {
+	return R.tryCatch(R.compose(
+									R.objOf(obj.name),
+									R.evolve({articleLink: configureUrl(obj.url,obj.link)}),
+									(obj) => {
+										return {
+											articleLink: obj.link ? obj.link : obj.node.attr('href'),
+											articleTitle: obj.text ? obj.text : obj.node.text(),
+											siteUrl: obj.url
+										};
+									}
+								),R.always({}))(obj) ;
 };
 
-
-module.exports = {
-	createPayloadWithNode: function(name, url, element) {
-		try {
-			let returnObj = {};
-			returnObj[name] = {
-				articleLink: configureUrl(element.attr('href'), url),
-				articleTitle: element.text(),
-				siteUrl: url
-			};
-			return returnObj;
-		} catch (error) {
-			console.log(error);
-			return {};
-		}
-	},
-	createPayload: function(name, link, url, title) {
-		try {
-			let returnObj = {};
-			returnObj[name] = {
-				articleLink: configureUrl(link, url),
-				articleTitle: title,
-				siteUrl: url
-			};
-			return returnObj;
-		} catch (error) {
-			console.log(error);
-			return {};
-		}
-	}
-};

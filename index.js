@@ -24,5 +24,5 @@ exports.handler = function(event, context, callback) {
 		console.log(mergedObj);
 		writeToDynamo(mergedObj);
 		callback();
-	});
+	}).catch(err => console.log(err));
 };
