@@ -8,7 +8,7 @@ module.exports = (obj) => {
 									R.evolve({articleLink: configureUrl(obj.url,obj.link)}),
 									(obj) => {
 										return {
-											articleLink: obj.node ? obj.node.attr('href') : obj.link,
+											articleLink: obj.link ? obj.link : obj.node.attr('href'),
 											articleTitle: obj.text ? obj.text : obj.node.text(),
 											siteUrl: obj.url
 										};
