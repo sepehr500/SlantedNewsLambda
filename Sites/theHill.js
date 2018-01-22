@@ -2,13 +2,13 @@ var cheerioFetch = require('fetch-cheerio-object');
 var createPayload = require('../createPayload');
 var siteInfo = require('../Config/siteInfo');
 
-module.exports = cheerioFetch(siteInfo.dailyCaller.url).then(
+module.exports = cheerioFetch(siteInfo.theHill.url).then(
 	$ => {
-		const node = $('#homepage-lead-truck > div > h2 > a');
-		return createPayload({
-			name: siteInfo.dailyCaller.name, 
+		const node = $('.top-story-headline').find('a');
+		return createPayload.createPayload({
+			name: siteInfo.theHill.name, 
 			link: node.attr('href'), 
-			url: siteInfo.dailyCaller.url, 
+			url: siteInfo.theHill.url, 
 			text: node.attr('title')
 		});
 	}

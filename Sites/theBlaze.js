@@ -4,7 +4,13 @@ var siteInfo = require('../Config/siteInfo');
 
 module.exports = cheerioFetch(siteInfo.theBlaze.url).then(
 	$ => {
-		const node = $('.need-to-know-link').first();
-		return createPayload({name: siteInfo.theBlaze.name, url: siteInfo.theBlaze.url, node: node});
+		const blazeLink = $('.link-inverse').first().attr('href');
+		const blazeText = $('.display-text').find('span').first().text();
+		return createPayload({
+			name: siteInfo.theBlaze.name, 
+			link: blazeLink,
+			url: siteInfo.theBlaze.url,
+			text: blazeText
+		});
 	}
 );
