@@ -3,13 +3,19 @@ var writeToDynamo = require('./writeToDynamo'),
 	brietbart = require('./Sites/breitbart'),
 	foxNews = require('./Sites/foxNews'),
 	npr = require('./Sites/npr'),
-	nyt = require('./Sites/newYorkTimes');
+	nyt = require('./Sites/newYorkTimes'),
+	dailyCaller = require('./Sites/dailyCaller'),
+	drudge = require('./Sites/drudge'),
+	blaze = require('./Sites/theBlaze');
 
 var promises = [
 	brietbart, 
 	foxNews, 
 	npr, 
-	nyt
+	nyt,
+	dailyCaller,
+	blaze,
+	drudge
 ];
 
 exports.handler = function(event, context, callback) {

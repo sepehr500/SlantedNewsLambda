@@ -14,5 +14,17 @@ module.exports = {
 	nyt: {
 		name: 'New York Times',
 		url: 'https://www.nytimes.com'
+	},
+	drudge: {
+		name: 'Drudge Report',
+		url: 'http://www.drudgereport.com'
+	},
+	dailyCaller: {
+		name: 'The Daily Caller',
+		url: 'http://www.dailycaller.com'
+	},
+	theBlaze: {
+		name: 'The Blaze',
+		url: 'https://www.theblaze.com'
 	}
 };
