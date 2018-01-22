@@ -4,7 +4,8 @@ var siteInfo = require('../Config/siteInfo');
 
 module.exports = cheerioFetch(siteInfo.theBlaze.url).then(
 	$ => {
-		const node = $('.need-to-know-link').first();
-		return createPayload.createPayloadWithNode(siteInfo.theBlaze.name, siteInfo.theBlaze.url, node);
+		const link = $('.link-inverse').first().attr('href');
+		const text = $('.display-text').find('span').first().text();
+		return createPayload.createPayload(siteInfo.theBlaze.name, link, siteInfo.theBlaze.url, text);
 	}
 );
