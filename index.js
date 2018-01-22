@@ -9,13 +9,13 @@ var writeToDynamo = require('./writeToDynamo'),
 	blaze = require('./Sites/theBlaze');
 
 var promises = [
-	// brietbart, 
-	// foxNews, 
-	// npr, 
-	// nyt,
-	// dailyCaller,
-	blaze
-	// drudge
+	brietbart, 
+	foxNews, 
+	npr, 
+	nyt,
+	dailyCaller,
+	blaze,
+	drudge
 ];
 
 exports.handler = function(event, context, callback) {

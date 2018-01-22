@@ -5,6 +5,6 @@ var siteInfo = require('../Config/siteInfo');
 module.exports = cheerioFetch(siteInfo.breitbart.url).then(
 	$ => {
 		const node = $('.title', '.top-article').find('a');
-		return createPayload.createPayloadWithNode(siteInfo.breitbart.name, siteInfo.breitbart.url, node);
+		return createPayload({name: siteInfo.breitbart.name, url: siteInfo.breitbart.url, node: node});
 	}
 );
