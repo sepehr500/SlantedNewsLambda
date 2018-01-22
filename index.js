@@ -9,13 +9,13 @@ var writeToDynamo = require('./writeToDynamo'),
 	blaze = require('./Sites/theBlaze');
 
 var promises = [
-	brietbart, 
-	foxNews, 
-	npr, 
-	nyt,
-	dailyCaller,
-	blaze,
-	drudge
+	// brietbart, 
+	// foxNews, 
+	// npr, 
+	// nyt,
+	// dailyCaller,
+	blaze
+	// drudge
 ];
 
 exports.handler = function(event, context, callback) {
@@ -24,5 +24,5 @@ exports.handler = function(event, context, callback) {
 		console.log(mergedObj);
 		writeToDynamo(mergedObj);
 		callback();
-	});
+	}).catch(err => console.log(err));
 };
