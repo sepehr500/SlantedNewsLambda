@@ -6,6 +6,11 @@ module.exports = cheerioFetch(siteInfo.theEconomist.url).then(
 	$ => {
 		const node = $('.teaser__group-text').first();
 		const parent = node.parent();
-		return createPayload.createPayload(siteInfo.theEconomist.name, parent.attr('href'), siteInfo.theEconomist.url, node.attr('title'));
+		return createPayload.createPayload({
+			name: siteInfo.theEconomist.name, 
+			link: parent.attr('href'), 
+			url: siteInfo.theEconomist.url, 
+			text: node.attr('title')
+		});
 	}
 );

@@ -5,6 +5,11 @@ var siteInfo = require('../Config/siteInfo');
 module.exports = cheerioFetch(siteInfo.theHill.url).then(
 	$ => {
 		const node = $('.top-story-headline').find('a');
-		return createPayload.createPayload(siteInfo.theHill.name, node.attr('href'), siteInfo.theHill.url, node.attr('title'));
+		return createPayload.createPayload({
+			name: siteInfo.theHill.name, 
+			link: node.attr('href'), 
+			url: siteInfo.theHill.url, 
+			text: node.attr('title')
+		});
 	}
 );
