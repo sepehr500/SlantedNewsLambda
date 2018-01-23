@@ -6,7 +6,7 @@ module.exports = cheerioFetch(siteInfo.theEconomist.url).then(
 	$ => {
 		const node = $('.teaser__group-text').first();
 		const parent = node.parent();
-		return createPayload.createPayload({
+		return createPayload({
 			name: siteInfo.theEconomist.name, 
 			link: parent.attr('href'), 
 			url: siteInfo.theEconomist.url, 

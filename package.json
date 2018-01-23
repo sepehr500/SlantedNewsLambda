@@ -27,6 +27,7 @@
     "@aws/dynamodb-data-mapper": "^0.4.0",
     "aws-sdk": "^2.182.0",
     "cheerio": "^1.0.0-rc.2",
-    "fetch-cheerio-object": "^1.2.0"
+    "fetch-cheerio-object": "^1.2.0",
+    "ramda": "^0.25.0"
   }
 }
