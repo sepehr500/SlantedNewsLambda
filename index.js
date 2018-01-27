@@ -10,7 +10,11 @@ var	brietbart = require('./Sites/breitbart'),
 	// ap = require('./Sites/ap'),
 	reuters = require('./Sites/reuters'),
 	hill = require('./Sites/theHill'),
-	economist = require('./Sites/theEconomist');
+	economist = require('./Sites/theEconomist'),
+	wsj = require('./Sites/wjs'),
+	vox = require('./Sites/vox'),
+	washPo = require('./Sites/washPo'),
+	politico = require('./Sites/politico');
 
 var promises = [
 	// ap,
@@ -23,7 +27,11 @@ var promises = [
 	hill,
 	npr, 
 	nyt,
-	reuters
+	reuters,
+	vox,
+	washPo,
+	wsj,
+	politico
 ];
 
 exports.handler = function(event, context, callback) {

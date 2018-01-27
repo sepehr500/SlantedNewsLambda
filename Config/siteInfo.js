@@ -42,5 +42,21 @@ module.exports = {
 	theHill: {
 		name: 'The Hill',
 		url: 'http://www.thehill.com'
+	},
+	vox: {
+		name: 'Vox',
+		url: 'http://www.vox.com'
+	},
+	washPo: {
+		name: 'Washington Post',
+		url: 'http://www.washingtonpost.com'
+	},
+	wsj: {
+		name: 'Wall Street Journal',
+		url: 'http://www.wsj.com'
+	},
+	politico: {
+		name: 'Politico',
+		url: 'http://www.politico.com'
 	}
 };
