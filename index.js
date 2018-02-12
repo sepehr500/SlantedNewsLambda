@@ -14,12 +14,14 @@ var	brietbart = require('./Sites/breitbart'),
 	wsj = require('./Sites/wjs'),
 	vox = require('./Sites/vox'),
 	washPo = require('./Sites/washPo'),
-	politico = require('./Sites/politico');
+	politico = require('./Sites/politico'),
+	cbs = require('./Sites/cbs');
 
 var promises = [
 	// ap,
 	blaze,
-	brietbart, 
+	brietbart,
+	cbs,
 	dailyCaller,
 	drudge,
 	economist,

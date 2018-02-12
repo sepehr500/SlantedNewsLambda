@@ -7,6 +7,10 @@ module.exports = {
 		name: 'Breitbart',
 		url: 'http://www.breitbart.com' 
 	},
+	cbs: {
+		name: 'CBS News',
+		url: 'https://www.cbsnews.com'
+	},
 	dailyCaller: {
 		name: 'The Daily Caller',
 		url: 'http://www.dailycaller.com'
@@ -26,6 +30,10 @@ module.exports = {
 	nyt: {
 		name: 'New York Times',
 		url: 'https://www.nytimes.com'
+	},
+	politico: {
+		name: 'Politico',
+		url: 'http://www.politico.com'
 	},
 	reuters: {
 		name: 'Reuters',
@@ -54,9 +62,5 @@ module.exports = {
 	wsj: {
 		name: 'Wall Street Journal',
 		url: 'http://www.wsj.com'
-	},
-	politico: {
-		name: 'Politico',
-		url: 'http://www.politico.com'
 	}
 };
