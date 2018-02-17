@@ -15,13 +15,15 @@ var	brietbart = require('./Sites/breitbart'),
 	vox = require('./Sites/vox'),
 	washPo = require('./Sites/washPo'),
 	politico = require('./Sites/politico'),
-	cbs = require('./Sites/cbs');
+	huffPo= require('./Sites/huffPo');
+	// cbs = require('./Sites/cbs'),
+	// cnn = require('./Sites/cnn');
 
 var promises = [
 	// ap,
 	blaze,
 	brietbart,
-	cbs,
+	// cbs,
 	dailyCaller,
 	drudge,
 	economist,
@@ -33,7 +35,9 @@ var promises = [
 	vox,
 	washPo,
 	wsj,
-	politico
+	politico,
+	huffPo,
+	// cnn
 ];
 
 exports.handler = function(event, context, callback) {

@@ -11,6 +11,10 @@ module.exports = {
 		name: 'CBS News',
 		url: 'https://www.cbsnews.com'
 	},
+	cnn: {
+		name: 'CNN',
+		url: 'https://www.edition.cnn.com'
+	},
 	dailyCaller: {
 		name: 'The Daily Caller',
 		url: 'http://www.dailycaller.com'
@@ -22,6 +26,10 @@ module.exports = {
 	foxNews: {
 		name: 'Fox News',
 		url: 'http://www.foxnews.com'
+	},
+	huffPo: {
+		name: 'Huffington Post',
+		url: 'http://www.huffingtonpost.com'
 	},
 	npr: {
 		name: 'NPR',
