@@ -13,8 +13,8 @@ module.exports = function(obj) {
 	const rand = Math.floor(Math.random() * 1000000000);
 	var params = {
 		Item: {
-			uuid: rand,
-			TimeStamp: Date.now(),
+			Main: rand.toString(),
+			Stamp: Date.now(),
 		},
 		TableName: 'SlantedNews'
 	};
