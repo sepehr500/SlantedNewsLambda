@@ -44,7 +44,8 @@ module.exports = {
 	},
 	huffPo: {
 		name: 'Huffington Post',
-		url: 'http://www.huffingtonpost.com'
+		url: 'http://www.huffingtonpost.com',
+		slant: L
 	},
 	npr: {
 		name: 'NPR',
