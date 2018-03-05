@@ -10,15 +10,15 @@ var docClient = new AWS.DynamoDB.DocumentClient(
 );
 
 module.exports = function(obj) {
-	const dateObj = new Date();
-	const month = dateObj.getUTCMonth() + 1; //months from 1-12
-	const day = dateObj.getUTCDate();
-	const year = dateObj.getUTCFullYear();
+	// const dateObj = new Date();
+	// const month = dateObj.getUTCMonth() + 1; //months from 1-12
+	// const day = dateObj.getUTCDate();
+	// const year = dateObj.getUTCFullYear();
 
-	const newdate = year + '/' + month + '/' + day;
+	// const newdate = year + '/' + month + '/' + day;
 	var params = {
 		Item: {
-			Main: newdate,
+			Main: 'date',
 			Stamp: Date.now(),
 		},
 		TableName: 'SlantedNews'
