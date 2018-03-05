@@ -10,10 +10,15 @@ var docClient = new AWS.DynamoDB.DocumentClient(
 );
 
 module.exports = function(obj) {
-	const rand = Math.floor(Math.random() * 1000000000);
+	// const dateObj = new Date();
+	// const month = dateObj.getUTCMonth() + 1; //months from 1-12
+	// const day = dateObj.getUTCDate();
+	// const year = dateObj.getUTCFullYear();
+
+	// const newdate = year + '/' + month + '/' + day;
 	var params = {
 		Item: {
-			Main: rand.toString(),
+			Main: 'date',
 			Stamp: Date.now(),
 		},
 		TableName: 'SlantedNews'
