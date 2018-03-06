@@ -1,6 +1,8 @@
 var secrets = require('./secrets');
 var AWS = require('aws-sdk');
 
+const curTime = Date.now();
+
 var docClient = new AWS.DynamoDB.DocumentClient(
 	{
 		accessKeyId: secrets.AWS_ACCESS_KEY_ID,
@@ -9,26 +11,43 @@ var docClient = new AWS.DynamoDB.DocumentClient(
 	}
 );
 
-module.exports = function(obj) {
-	// const dateObj = new Date();
-	// const month = dateObj.getUTCMonth() + 1; //months from 1-12
-	// const day = dateObj.getUTCDate();
-	// const year = dateObj.getUTCFullYear();
-
-	// const newdate = year + '/' + month + '/' + day;
+const writeCurrent = (obj) => {
 	var params = {
 		Item: {
-			Main: 'date',
-			Stamp: Date.now(),
+			Main: 'current',
+			Stamp: 1,
 		},
 		TableName: 'SlantedNews'
 	};
   
-	params.Item = Object.assign(params.Item, obj);
+	params.Item = Object.assign(params.Item, obj, {time: curTime});
 	console.log(params);
 	docClient.put(params, function(err, data){
 		if (err) console.log(err);
 		else console.log(data);
 	});
 
+};
+
+const writeHistory = (obj) => {
+	var params = {
+		Item: {
+			Main: curTime.toString(),
+			Stamp: curTime,
+		},
+		TableName: 'SlantedNews'
+	};
+  
+	params.Item = Object.assign(params.Item, obj, {time: curTime});
+	console.log(params);
+	docClient.put(params, function(err, data){
+		if (err) console.log(err);
+		else console.log(data);
+	});
+
+};
+
+module.exports = function(obj) {
+	writeCurrent(obj);
+	writeHistory(obj);
 };
