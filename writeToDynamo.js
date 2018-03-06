@@ -11,7 +11,7 @@ var docClient = new AWS.DynamoDB.DocumentClient(
 	}
 );
 
-const writeCurrent = (obj) => {
+const writeCurrent = (obj, cb) => {
 	var params = {
 		Item: {
 			Main: 'current',
@@ -24,12 +24,12 @@ const writeCurrent = (obj) => {
 	console.log(params);
 	docClient.put(params, function(err, data){
 		if (err) console.log(err);
-		else console.log(data);
+		else cb();
 	});
 
 };
 
-const writeHistory = (obj) => {
+const writeHistory = (obj, cb) => {
 	var params = {
 		Item: {
 			Main: curTime.toString(),
@@ -42,12 +42,13 @@ const writeHistory = (obj) => {
 	console.log(params);
 	docClient.put(params, function(err, data){
 		if (err) console.log(err);
-		else console.log(data);
+		else cb();
 	});
 
 };
 
-module.exports = function(obj) {
-	writeCurrent(obj);
-	writeHistory(obj);
+module.exports = function(obj, cb) {
+	writeCurrent(obj, () => 
+		writeHistory(obj, cb)
+	);
 };
