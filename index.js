@@ -1,4 +1,5 @@
 // For development/testing purposes
+const clusterData = require('./cluster');
 var writeToDynamo = require('./writeToDynamo');
 var	brietbart = require('./Sites/breitbart'),
 	foxNews = require('./Sites/foxNews'),
@@ -43,7 +44,8 @@ var promises = [
 exports.handler = function(event, context, callback) {
 	Promise.all(promises).then(result => {
 		const mergedObj = result.reduce((acc, cur) => Object.assign(acc, cur), {});
-		console.log(mergedObj);
+		// const clustered = clusterData(mergedObj);
+		// console.log(mergedObj);
 		writeToDynamo(mergedObj, callback);
 	}).catch(err => console.log(err));
 };
