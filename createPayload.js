@@ -1,4 +1,5 @@
 var R = require('ramda');
+var sentiment = require('sentiment');
 
 var siteInfo = require('./Config/siteInfo');
 
@@ -18,7 +19,8 @@ module.exports = (obj) => {
 				articleLink: formatArticleLink(obj.url, obj.link),
 				articleTitle: obj.text ? obj.text : obj.node.text(),
 				siteUrl: obj.url,
-				slant: findSlant(siteInfo)
+				slant: findSlant(siteInfo),
+				sentiment: sentiment(obj.text ? obj.text : obj.node.text()).score
 			};
 		}
 	),R.always({}))(obj);
