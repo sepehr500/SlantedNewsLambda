@@ -21,7 +21,7 @@ const writeCurrent = (obj, cb) => {
 	};
   
 	params.Item = Object.assign(params.Item, obj, {time: curTime});
-	console.log(params);
+	// console.log(params);
 	docClient.put(params, function(err, data){
 		if (err) console.log(err);
 		else cb();
@@ -39,7 +39,7 @@ const writeHistory = (obj, cb) => {
 	};
   
 	params.Item = Object.assign(params.Item, obj, {time: curTime});
-	console.log(params);
+	// console.log(params);
 	docClient.put(params, function(err, data){
 		if (err) console.log(err);
 		else cb();
